@@ -26,21 +26,37 @@ app.get('/guestbook', (req, res) => {
         }
         const guestbookEntries = JSON.parse(data);
         let htmlResponse = `
-        <html>
-        <head>
-            <title>Guestbook</title>
-        </head>
-        <body>
-            <h1>Guestbook</h1>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Username</th>
-                        <th>Country</th>
-                        <th>Message</th>
-                    </tr>
-                </thead>
-                <tbody>`;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guestbook</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link active-nav" href="/guestbook">Guestbook</a></li>
+                <li class="nav-item"><a class="nav-link" href="/newmessage">New Message</a></li>
+                <li class="nav-item"><a class="nav-link" href="/ajaxmessage">Ajax Message</a></li>
+            </ul>
+        </nav>
+    <div class="container">
+        <h1>Guestbook</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Country</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>`;
 
     // Loop through guestbookEntries and add each entry to the HTML response
     guestbookEntries.forEach(entry => {
@@ -54,10 +70,11 @@ app.get('/guestbook', (req, res) => {
 
     // Close the HTML response
     htmlResponse += `
-                </tbody>
-            </table>
-        </body>
-        </html>`;
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>`;
 
     // Send the HTML response
     res.send(htmlResponse);
