@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #f3e567, #fc9917);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Background animation */
+    background: linear-gradient(42deg, #ffa01c, #ffe300, #ffab00);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 27s ease infinite;
+    -moz-animation: AnimationName 27s ease infinite;
+    animation: AnimationName 27s ease infinite;
+}
+/* Gradient animator */
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 55%}
+    50%{background-position:100% 46%}
+    100%{background-position:0% 55%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 55%}
+    50%{background-position:100% 46%}
+    100%{background-position:0% 55%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 55%}
+    50%{background-position:100% 46%}
+    100%{background-position:0% 55%}
+}
+
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.active-nav {
+    color: #ffa600 !important;
+}
+.nav-link {
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #666;
+}
